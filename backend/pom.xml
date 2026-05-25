@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.chatapp</groupId>
-	<artifactId>lore</artifactId>
+	<artifactId>chat-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>lore</name>
+	<name>chat-app</name>
 	<description>A chat application</description>
 	<url/>
 	<licenses>

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Lore - Realtime Chat",
+  title: "ChatApp - Realtime Chat",
   description: "A clean, modern chat application built with Next.js and Spring Boot.",
 };
 
@@ -21,3 +21,4 @@ export default function RootLayout({
     </html>
   );
 }
+

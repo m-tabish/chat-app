@@ -138,7 +138,7 @@ export default function ChatApp() {
       <div className="flex min-h-screen items-center justify-center p-4 bg-background">
         <Card className="w-full max-w-md border-2">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold">Welcome to Lore</CardTitle>
+            <CardTitle className="text-2xl font-bold">Welcome to ChatApp</CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
@@ -177,7 +177,7 @@ export default function ChatApp() {
       <div className="w-64 border-r flex flex-col bg-muted/30">
         <div className="p-4 border-b flex items-center justify-between">
           <h1 className="font-bold text-xl flex items-center gap-2">
-             Lore
+             ChatApp
           </h1>
           <Button variant="ghost" size="icon" onClick={handleLogout}>
             <LogOut className="h-4 w-4 text-destructive" />
@@ -294,3 +294,4 @@ export default function ChatApp() {
     </div>
   );
 }
+
