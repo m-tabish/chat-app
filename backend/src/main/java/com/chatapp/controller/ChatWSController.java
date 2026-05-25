@@ -9,6 +9,7 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 
 import com.chatapp.dto.MessageDto;
+import com.chatapp.service.MessageService;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -20,12 +21,18 @@ public class ChatWSController {
 
     private final SimpMessagingTemplate messagingTemplate;
 
+    private final MessageService messageService;
+
     // new user joined the chat
 
     @MessageMapping("/chat.sendMessage")
-    public void sendMessage(MessageDto dto) {
-        // Broadcast to the room topic
-        messagingTemplate.convertAndSend("/topic/room/" + dto.getRoomId(), dto);
+    @Transactional
+    public void sendMessage(@Payload MessageDto dto) {
+        // Persist message to database
+        var savedMessage = messageService.sendMessage(dto);
+        
+        // Broadcast the saved message (with ID and timestamp) to the room topic
+        messagingTemplate.convertAndSend("/topic/room/" + dto.getRoomId(), savedMessage);
     }
 
     @MessageMapping("/chat.addUser")
